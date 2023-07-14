@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Phishing Website Detection
+{% endblock title %}
+
+{% block body %}
+<div class="jumbotron text-center">
+    <center>
+        <h3 style="font-family: impact;">Phishing Website Detection</h3>
+
+        <form method="POST" action="{{ url_for('getURL') }}">
+            <div class="form-group">
+                <table cellpadding="10" cellspacing="25">
+                    <tr>
+                        <td><input type="text" name="url" placeholder="Enter a URL" value="{{ url }}" required size="90"></td>
+                        <td align="center"><input class="btn btn-primary" type="submit" value="Check URL"></td>
+                    </tr>
+                    <tr>
+                        <td align="center">{% if error %}<p style="color: {% if error == 'Phishing' %}red{% else %}green{% endif %};"><strong>{{ error }}</strong></p>{% endif %}</td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </center>
+</div>
+
+<script>
+    // Custom JavaScript code
+    // Add your custom JavaScript code here
+    // Replace this placeholder with your JavaScript code
+
+    // Example placeholder with JavaScript code
+    // Replace this placeholder with your actual JavaScript code
+    console.log("Custom JavaScript code executed!");
+</script>
+{% endblock body %}
